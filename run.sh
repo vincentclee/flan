@@ -31,7 +31,7 @@ function get_filename(){
 }
 
 mkdir $root_dir$xml_dir
-while IFS= read -r line
+while IFS= read -r line || [ -n "$line" ]
 do
   current_time=$(date "+%Y.%m.%d-%H.%M.%S")
   filename=$(get_filename $line)".xml"
